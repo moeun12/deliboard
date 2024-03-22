@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/Home">
+
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.deliboard.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_Home_to_GameList"
+            app:destination="@id/GameList" />
+        <action
+            android:id="@+id/action_Home_to_beverage"
+            app:destination="@id/beverage" />
+        <action
+            android:id="@+id/action_Home_to_recommend"
+            app:destination="@id/recommend" />
+        <action
+            android:id="@+id/action_Home_to_gameDetail"
+            app:destination="@id/gameDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/GameList"
+        android:name="Game.GameList"
+        android:label="fragment_game_list"
+        tools:layout="@layout/fragment_game_list" >
+        <action
+            android:id="@+id/action_GameList_to_gameDetail"
+            app:destination="@id/gameDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommend"
+        android:name="Recommend.Recommend"
+        android:label="fragment_recommend"
+        tools:layout="@layout/fragment_recommend" />
+    <fragment
+        android:id="@+id/beverage"
+        android:name="beverage.Beverage"
+        android:label="fragment_beverage"
+        tools:layout="@layout/fragment_beverage" >
+        <action
+            android:id="@+id/action_beverage_to_cart"
+            app:destination="@id/cart" />
+        <action
+            android:id="@+id/action_beverage_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetail"
+        android:name="Detail.GameDetail"
+        android:label="fragment_game_detail"
+        tools:layout="@layout/fragment_game_detail" >
+        <action
+            android:id="@+id/action_gameDetail_to_GameList"
+            app:destination="@id/GameList" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart"
+        android:name="beverage.Cart"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cart_to_beverage"
+            app:destination="@id/beverage" />
+        <action
+            android:id="@+id/action_cart_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+</navigation>
